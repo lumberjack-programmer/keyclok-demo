@@ -8,3 +8,9 @@ Generate token
 ```
 http://localhost:8080/realms/SpringBootDemo/.well-known/openid-configuration
 ```
+Make requests 
+```curl
+% curl -H "Authorization: Bearer <jwt token>" \ 
+-X GET http://localhost:8081/api/v1/test/user \
+-w "%{http_code}\n"
+```

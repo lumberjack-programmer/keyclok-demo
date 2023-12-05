@@ -16,3 +16,9 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/SpringBootDemo
           jwk-set-uri: ${spring.security.oauth2.client.provider.keycloak.issuer-uri}/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: rest-api
+      principal-name: preferred_username
