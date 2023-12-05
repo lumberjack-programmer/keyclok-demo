@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: rest-api
+            authorization-grant-type: password
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/SpringBootDemo
+            user-name-attribute: lumberjack_programmer
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/SpringBootDemo
+          jwk-set-uri: ${spring.security.oauth2.client.provider.keycloak.issuer-uri}/protocol/openid-connect/certs
